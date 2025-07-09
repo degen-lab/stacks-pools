@@ -31,7 +31,7 @@ const VotingNotifier = () => {
   const userSession = useAppSelector(selectUserSessionState);
   const [notifiersRows, setNotifiersRows] = useState<{ id: number; address: string; notifierVotes: string }[]>([]);
   const navigate = useNavigate();
-  const localNetwork = network === 'devnet' ? 'testnet' : network;
+  const localNetwork = network === 'devnet' || network === 'nakamotoTestnet' ? 'testnet' : network;
   const appCurrentTheme = useAppSelector(selectCurrentTheme);
 
   const handleMinerInfoButtonClick = (address: string | undefined) => {
@@ -133,8 +133,8 @@ const VotingNotifier = () => {
         notifier['vote-status'].value === false
           ? 'Elections ended!'
           : parseInt(notifier['election-blocks-remaining'].value) > 0
-          ? 'Elections on-going!'
-          : 'Ended by time!'
+            ? 'Elections on-going!'
+            : 'Ended by time!',
       );
       setElectionBlocksRemaining(parseInt(notifier['election-blocks-remaining'].value));
     };

@@ -28,39 +28,54 @@ export const contractMapping: ContractMapping = {
       contractName: 'mining-pool-5-blocks',
       owner: 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM',
     },
+    nakamotoTestnet: {
+      contractAddress: '', // TODO: complete when deployed
+      contractName: '', // TODO: complete when deployed
+      owner: '', // TODO: complete when deployed  
+    },
   },
 
   stacking: {
     mainnet: {
-      contractAddress: 'SP02D2KP0630FS1BCJ7YM4TYMDH6NS9QKTNCZR00',
-      contractName: 'stacking-pool',
-      owner: 'SP02D2KP0630FS1BCJ7YM4TYMDH6NS9QKTNCZR00',
+      contractAddress: 'SP1SCEXE6PMGPAC6B4N5P2MDKX8V4GF9QDE1FNNGJ',
+      contractName: 'degenlab-stacking-pool-pox4',
+      owner: 'SP1SCEXE6PMGPAC6B4N5P2MDKX8V4GF9QDE1FNNGJ',
     },
     testnet: {
       contractAddress: 'ST02D2KP0630FS1BCJ7YM4TYMDH6NS9QKR0B57R3',
-      contractName: 'stacking-pool-v5',
+      contractName: 'stacking-pool-v6',
       owner: 'ST02D2KP0630FS1BCJ7YM4TYMDH6NS9QKR0B57R3',
     },
     devnet: {
       contractAddress: 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM',
-      contractName: 'stacking-pool',
+      contractName: 'stacking-pool-test',
       owner: 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM',
+    },
+    nakamotoTestnet: {
+      contractAddress: 'ST2D033K08AW2TPRTCFP3QD5VHZB7494TY0QXERJ1',
+      contractName: 'stacking-pool-v1',
+      owner: 'ST2D033K08AW2TPRTCFP3QD5VHZB7494TY0QXERJ1',
     },
   },
   pox: {
     mainnet: {
       contractAddress: 'SP000000000000000000002Q6VF78',
-      contractName: 'pox-3',
+      contractName: 'pox-4',
       owner: 'SP000000000000000000002Q6VF78',
     },
     testnet: {
       contractAddress: 'ST000000000000000000002AMW42H',
-      contractName: 'pox-3',
+      contractName: 'pox-4',
       owner: 'ST000000000000000000002AMW42H',
     },
     devnet: {
       contractAddress: 'ST000000000000000000002AMW42H',
-      contractName: 'pox-3',
+      contractName: 'pox-4',
+      owner: 'ST000000000000000000002AMW42H',
+    },
+    nakamotoTestnet: {
+      contractAddress: 'ST000000000000000000002AMW42H',
+      contractName: 'pox-4',
       owner: 'ST000000000000000000002AMW42H',
     },
   },
@@ -132,6 +147,7 @@ interface IFunctionMapping {
       hasWonBurnBlock: string;
       alreadyRewardedBurnBlock: string;
       getUserData: string;
+      canDelegateThisCycle: string;
     };
     publicFunctions: {
       delegateStx: string;
@@ -198,7 +214,7 @@ export const functionMapping: IFunctionMapping = {
       withdrawStx: 'withdraw-stx',
       rewardDistribution: 'reward-distribution',
       addPendingMinersToPool: 'add-pending-miners-to-pool',
-      leavePool: 'leave-pool',
+      leavePool: 'quit-stacking-pool',
       proposeRemoval: 'propose-removal',
       votePositiveRemoveRequest: 'vote-positive-remove-request',
       voteNegativeRemoveRequest: 'vote-negative-remove-request',
@@ -226,11 +242,12 @@ export const functionMapping: IFunctionMapping = {
       hasWonBurnBlock: 'has-won-burn-block',
       alreadyRewardedBurnBlock: 'already-rewarded-burn-block',
       getUserData: 'get-user-data',
+      canDelegateThisCycle: 'can-delegate-this-cycle',
     },
     publicFunctions: {
       delegateStx: 'delegate-stx',
       delegateStackStxMany: 'delegate-stack-stx-many',
-      leavePool: 'leave-pool',
+      leavePool: 'quit-stacking-pool',
       rewardDistribution: 'reward-distribution',
       depositStx: 'deposit-stx-liquidity-provider',
       withdrawStx: 'withdraw-stx-liquidity-provider',

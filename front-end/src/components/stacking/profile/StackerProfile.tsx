@@ -18,6 +18,7 @@ interface IStackerProfileProps {
   currentCycle: number | null;
   preparePhaseStartBlockHeight: number | null;
   rewardPhaseStartBlockHeight: number | null;
+  nextRewardPhaseStartBlockHeight: number | null;
 }
 
 const StackerProfile = ({
@@ -35,30 +36,32 @@ const StackerProfile = ({
   currentCycle,
   preparePhaseStartBlockHeight,
   rewardPhaseStartBlockHeight,
+  nextRewardPhaseStartBlockHeight,
 }: IStackerProfileProps) => {
-  console.log('currentRole StackerProfile:', currentRole);
-  console.log(
-    'return conditional:',
-    currentBurnBlockHeight !== null &&
-      currentCycle !== null &&
-      preparePhaseStartBlockHeight !== null &&
-      rewardPhaseStartBlockHeight !== null &&
-      reservedAmount !== null &&
-      returnCovered !== null &&
-      stacksAmountThisCycle !== null
-  );
-  console.log('currentBurnBlockHeight:', currentBurnBlockHeight);
-  console.log('cur cycle:', currentCycle);
-  console.log('preparePhaseStartBlockHeight:', preparePhaseStartBlockHeight);
-  console.log('rewardPhaseStartBlockHeight:', rewardPhaseStartBlockHeight);
-  console.log('reservedAmount:', reservedAmount);
-  console.log('returnCovered:', returnCovered);
-  console.log('stacksAmountThisCycle:', stacksAmountThisCycle);
+  // console.log('currentRole StackerProfile:', currentRole);
+  // console.log(
+  //   'return conditional:',
+  //   currentBurnBlockHeight !== null &&
+  //     currentCycle !== null &&
+  //     preparePhaseStartBlockHeight !== null &&
+  //     rewardPhaseStartBlockHeight !== null &&
+  //     reservedAmount !== null &&
+  //     returnCovered !== null &&
+  //     stacksAmountThisCycle !== null
+  // );
+  // console.log('currentBurnBlockHeight:', currentBurnBlockHeight);
+  // console.log('cur cycle:', currentCycle);
+  // console.log('preparePhaseStartBlockHeight:', preparePhaseStartBlockHeight);
+  // console.log('rewardPhaseStartBlockHeight:', rewardPhaseStartBlockHeight);
+  // console.log('reservedAmount:', reservedAmount);
+  // console.log('returnCovered:', returnCovered);
+  // console.log('stacksAmountThisCycle:', stacksAmountThisCycle);
   if (
     currentBurnBlockHeight !== null &&
     currentCycle !== null &&
     preparePhaseStartBlockHeight !== null &&
     rewardPhaseStartBlockHeight !== null &&
+    nextRewardPhaseStartBlockHeight !== null &&
     reservedAmount !== null &&
     returnCovered !== null &&
     stacksAmountThisCycle !== null
@@ -101,6 +104,7 @@ const StackerProfile = ({
                 currentCycle={currentCycle}
                 preparePhaseStartBlockHeight={preparePhaseStartBlockHeight}
                 rewardPhaseStartBlockHeight={rewardPhaseStartBlockHeight}
+                nextRewardPhaseStartBlockHeight={nextRewardPhaseStartBlockHeight}
               />
             )}
           </div>

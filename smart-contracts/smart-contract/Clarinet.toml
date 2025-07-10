@@ -7,6 +7,18 @@ cache_dir = '.cache'
 
 [[project.requirements]]
 contract_id = 'ST000000000000000000002AMW42H.pox-4'
+
+[[project.requirements]]
+contract_id = 'SP3K8BC0PPEVCV7NZ6QSRWPQ2JE9E5B6N3PA0KBR9.amm-swap-pool-v1-1'
+
+[[project.requirements]]
+contract_id = 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard'
+
+[[project.requirements]]
+contract_id = 'SP3K8BC0PPEVCV7NZ6QSRWPQ2JE9E5B6N3PA0KBR9.token-wbtc'
+
+[[project.requirements]]
+contract_id = 'SP3K8BC0PPEVCV7NZ6QSRWPQ2JE9E5B6N3PA0KBR9.token-wstx'
 [contracts.Wrapped-Bitcoin]
 path = 'contracts/Wrapped-Bitcoin.clar'
 clarity_version = 2
@@ -72,6 +84,11 @@ path = 'contracts/stacking-pool.clar'
 clarity_version = 2
 epoch = 2.5
 
+[contracts.stacking-pool-mainnet]
+path = 'contracts/stacking-pool-mainnet.clar'
+clarity_version = 2
+epoch = 2.5
+
 [contracts.stacking-pool-test]
 path = 'contracts/stacking-pool-test.clar'
 clarity_version = 2
@@ -112,9 +129,10 @@ path = 'contracts/trait-sip-010.clar'
 clarity_version = 2
 epoch = 2.4
 
-[repl]
-clarity_wasm_mode = false
-show_timings = false
+[contracts.stacking-pool-mainnet-v2]
+path = 'contracts/stacking-pool-mainnet-v2.clar'
+clarity_version = 2
+epoch = 2.5
 
 [repl.analysis]
 passes = []
